@@ -170,6 +170,17 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     border-radius: 0;
     color:#ffffff;
 }
+.btn-orange2 {
+    margin-top: 5%;
+    margin-left: 313%;
+    background-color: #ff7600;
+    border-bottom:2px solid #d35400;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    color:#ffffff;
+}
+
 
 .btn-orange:hover, .btn-orange:focus, .btn-orange:active, .btn-orange.active, .open .dropdown-toggle.btn-orange {
     background-color: #d35400;
@@ -334,6 +345,7 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     cursor:pointer;
     height: 200px;
     width: 200px;
+    margin-left: 280%;
 }
 
 .templatemo-project-box:hover .project-overlay {
@@ -401,11 +413,13 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
 }
 
 .blog_header {
+    margin-left: 43%;
     font-weight: bold; 
     font-size: 16px; 
 }
 
 .blog_text {
+    margin-left: 20%;
     text-align: justify; 
     font-size: 14px; 
     margin-top: 20px;

@@ -139,14 +139,9 @@ http://www.templatemo.com/tm-395-urbanic
                             <div class="text-center">
                                 <div class="member-thumb">
                                     <img src="../images/member1.jpg" class="img-responsive" alt="member 1" />
-                                    <div class="thumb-overlay">
-                                        <a href="#"><span class="social-icon-fb"></span></a>
-                                        <a href="#"><span class="social-icon-twitter"></span></a>
-                                        <a href="#"><span class="social-icon-linkedin"></span></a>
-                                    </div>
                                 </div>
                                 <div class="team-inner">
-                                    <p class="team-inner-header">HAPPY</p>
+                                    <a style="color:WHITE;" href="#" class="team-inner-header">HAPPY</a>
                                 </div>
                             </div>
                         </li>
@@ -154,14 +149,9 @@ http://www.templatemo.com/tm-395-urbanic
                             <div class="text-center">
                                 <div class="member-thumb">
                                     <img src="../images/member2.jpg" class="img-responsive" alt="member 2" />
-                                    <div class="thumb-overlay">
-                                        <a href="#"><span class="social-icon-fb"></span></a>
-                                        <a href="#"><span class="social-icon-twitter"></span></a>
-                                        <a href="#"><span class="social-icon-linkedin"></span></a>
-                                    </div>
                                 </div>
                                 <div class="team-inner">
-                                    <p class="team-inner-header">RELAX</p>
+                                    <a style="color:WHITE;" href="#" class="team-inner-header">RELAX</a>
                                 </div>
                             </div>
                         </li>
@@ -169,34 +159,69 @@ http://www.templatemo.com/tm-395-urbanic
                             <div class="text-center">
                                 <div class="member-thumb">
                                     <img src="../images/member3.jpg" class="img-responsive" alt="member 3" />
-                                    <div class="thumb-overlay">
-                                        <a href="#"><span class="social-icon-fb"></span></a>
-                                        <a href="#"><span class="social-icon-twitter"></span></a>
-                                        <a href="#"><span class="social-icon-linkedin"></span></a>
-                                    </div>
                                 </div>
                                 <div class="team-inner">
-                                    <p class="team-inner-header">SAD</p>
+                                    <a style="color:WHITE;" href="#" class="team-inner-header">SAD</a>
                                 </div>
                             </div>
                         </li>
-                        <li class="col-lg-3 col-md-3 col-sm-6 ">
-                            <div class="text-center">
-                                <div class="member-thumb">
-                                    <img src="../images/member4.jpg" class="img-responsive" alt="member 4" />
-                                    <div class="thumb-overlay">
-                                        <a href="#"><span class="social-icon-fb"></span></a>
-                                        <a href="#"><span class="social-icon-twitter"></span></a>
-                                        <a href="#"><span class="social-icon-linkedin"></span></a>
-                                    </div>
+                        <li> 
+                            <div >
+                                <div >
+                                   
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<canvas width="261" height="173" id="canvas_picker"></canvas>
+<div id="hex">HEX: <input type="text"></input></div>
+<div id="rgb">RGB: <input type="text"></input></div>
+<a style="margin-left:78%;color:WHITE;" href="#" class="team-inner-header">CHOOSE A COLOR</a>
+<script type="text/javascript">
+    var canvas = document.getElementById('canvas_picker').getContext('2d');
+
+    // create an image object and get it’s source
+    var img = new Image();
+    img.src = '../images/member4.jpg';
+
+    // copy the image to the canvas
+    $(img).load(function(){
+      canvas.drawImage(img,0,0);
+    });
+
+    // http://www.javascripter.net/faq/rgbtohex.htm
+    function rgbToHex(R,G,B) {return toHex(R)+toHex(G)+toHex(B)}
+    function toHex(n) {
+      n = parseInt(n,10);
+      if (isNaN(n)) return "00";
+      n = Math.max(0,Math.min(n,255));
+      return "0123456789ABCDEF".charAt((n-n%16)/16)  + "0123456789ABCDEF".charAt(n%16);
+    }
+    $('#canvas_picker').click(function(event){
+      // getting user coordinates
+      var x = event.pageX - this.offsetLeft;
+      var y = event.pageY - this.offsetTop;
+      // getting image data and RGB values
+      var img_data = canvas.getImageData(x, y, 1, 1).data;
+      var R = img_data[0];
+      var G = img_data[1];
+      var B = img_data[2];  var rgb = R + ',' + G + ',' + B;
+      // convert RGB to HEX
+      var hex = rgbToHex(R,G,B);
+      // making the color the value of the input
+      $('#rgb input').val(rgb);
+      $('#hex input').val('#' + hex);
+    });
+</script>
+
+
+                                    
                                 </div>
                                 <div class="team-inner">
-                                    <p class="team-inner-header">CHOOSE A COLOR</p>
+                                    
                                 </div>
                             </div>
                         </li>
                     </ul>
             </div>
+
         </div><!-- /.templatemo-team -->
 
         <div id="templatemo-portfolio" >
@@ -211,7 +236,7 @@ http://www.templatemo.com/tm-395-urbanic
                     <div class="clearfix"></div>
                     <div class="templatemo-gallery-category" style="font-size:16px; margin-top:80px;">
                         <div class="text-center">
-                            	<p class="team-inner-header">CHOOSE THE SOUND YOU WANT TO LISTEN</p>						
+                            	<p class="team-inner-header">LET LISTEN THE WILD</p>						
                         </div>
                     </div>
                 </div> <!-- /.row -->
@@ -220,76 +245,14 @@ http://www.templatemo.com/tm-395-urbanic
                 <div class="clearfix"></div>
                 <div class="text-center">
                     <ul class="templatemo-project-gallery" >
-                        <li class="col-lg-2 col-md-2 col-sm-2  gallery gallery-graphic" >
-                            <a class="colorbox" href="images/full-gallery-image-1.jpg" data-group="gallery-graphic">
-                                <div class="templatemo-project-box">
-
-                                    <img src="../images/gallery-image-1.jpg" class="img-responsive" alt="gallery" />
-
-                                    <div class="project-overlay">
-                                        <h5>Graphic</h5>
-                                        <hr />
-                                        <h4>TEA POT</h4>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class=" btn btn-lg btn-orange" href="#" role="button">PLAY</a>
-                        </li>
-                        <li class="col-lg-2 col-md-2 col-sm-2  gallery gallery-creative" >
-                            <a class="colorbox" href="images/full-gallery-image-2.jpg" data-group="gallery-creative">
-                                <div class="templatemo-project-box">
-                                    <img src="../images/gallery-image-2.jpg" class="img-responsive" alt="gallery" />
-                                    <div class="project-overlay">
-                                        <h5>Creative</h5>
-                                        <hr />
-                                        <h4>BREAKFAST</h4>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class=" btn btn-lg btn-orange" href="#" role="button">PLAY</a>
-                        </li>
+                       
                         <li class="col-lg-2 col-md-2 col-sm-2  gallery gallery-inspiration" >
-                            <a class="colorbox" href="images/full-gallery-image-3.jpg" data-group="gallery-inspiration">
                                 <div class="templatemo-project-box">
                                     <img src="../images/gallery-image-3.jpg" class="img-responsive" alt="gallery" />
-                                    <div class="project-overlay">
-                                        <h5>Inspiration</h5>
-                                        <hr />
-                                        <h4>GREEN COLORS</h4>
-                                    </div>
                                 </div>
-                            </a>
-                            <a class=" btn btn-lg btn-orange" href="#" role="button">PLAY</a>
+                            <a class=" btn btn-lg btn-orange2" href="#" role="button">LISTEN</a>
                         </li>
-                        <li class="col-lg-2 col-md-2 col-sm-2  gallery gallery-design" >
-                            <a class="colorbox" href="images/full-gallery-image-4.jpg" data-group="gallery-design">
-                                <div class="templatemo-project-box">
-                                    <img src="../images/gallery-image-4.jpg" class="img-responsive" alt="gallery" />
-                                    <div class="project-overlay">
-                                        <h5>Web Design</h5>
-                                        <hr />
-                                        <h4>CAMERA</h4>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class=" btn btn-lg btn-orange" href="#" role="button">PLAY</a>
-                        </li>
-                        
-                        
-                        <li class="col-lg-2 col-md-2 col-sm-2 gallery gallery-inspiration" >
-                            <a class="colorbox" href="images/full-gallery-image-10.jpg" data-group="gallery-inspiration">
-                                <div class="templatemo-project-box">
-                                    <img src="../images/gallery-image-10.jpg" class="img-responsive" alt="gallery" />
-                                    <div class="project-overlay">
-                                        <h5>Inspiration</h5>
-                                        <hr />
-                                        <h4>DOGGY</h4>
-                                    </div>
-
-                                </div>
-                            </a>
-                            <a class=" btn btn-lg btn-orange" href="#" role="button">PLAY</a>
-                        </li>
+                       
                     </ul><!-- /.gallery -->
                 </div>
             </div><!-- /.container -->
@@ -333,30 +296,55 @@ http://www.templatemo.com/tm-395-urbanic
                                 </a>
                             </li>
                             <li  class="col-md-8">
+                                <div class="pull-left">
+                                    <span style="margin-left: 58%;" class="blog_header">Cali</span><br/>
+                                </div>
                                 <div class="pull-right">
-                                    <a class="btn btn-orange" href="#" role="button">CALI</a>
+                                    <a class="btn btn-orange" href="#" role="button">Enviar</a>
                                 </div>
                                 <div class="clearfix"> </div>
+                                 <p class="blog_text">
+                                    In venenatis sodales purus a cursus. Ut consectetur, libero ac elementum tristique, enim ante aliquet mauris, scelerisque congue magna neque ac purus. Aliquam facilisis volutpat odio [...]
+                                </p>
                             </li>
                         </ul>
                     </div> <!-- /.blog_post 1 -->
                     
                     <div class="col-sm-5 col-md-6 blog_post">
                         <ul class="list-inline">
-                            <li class="col-md-4"><a href="#">
-                                <img class="img-responsive" src="../images/blog-image-2.jpg" alt="gallery 2" /></a>
+                            <li class="col-md-4">
+                                <a href="#">
+                                 <div style="width:220px; height:150px;">
+                                    <object type="application/x-shockwave-flash" data="http://swf.yowindow.com/yowidget3.swf" width="220" height="150">
+                                        <param name="movie" value="http://swf.yowindow.com/yowidget3.swf"/>
+                                        <param name="allowfullscreen" value="true"/>
+                                        <param name="wmode" value="opaque"/>
+                                        <param name="bgcolor" value="#FFFFFF"/>
+                                        <param name="flashvars" 
+                                        value="location_id=gn:3674962&amp;location_name=Medell%C3%ADn&amp;time_format=12&amp;unit_system=metric&amp;lang=es&amp;background=#FFFFFF&amp;mini_action=window&amp;copyright_bar=false"
+                                    />
+                                        <a href="http://WeatherScreenSaver.com?client=widget&amp;link=copyright"
+                                        style="width:220px;height:150px;display: block;text-indent: -50000px;font-size: 0px;background:#DDF url(http://yowindow.com/img/logo.png) no-repeat scroll 50% 50%;"
+                                        >Widget del tiempo atmosférico</a>
+                                    </object>
+                                </div>
+                                <div style="width: 220px; height: 15px; font-size: 14px; font-family: Arial,Helvetica,sans-serif;">
+                                    <span style="float:left;"><a target="_top" href="http://WeatherScreenSaver.com?client=widget&amp;link=copyright" style="color: #2fa900; font-weight:bold; text-decoration:none;" title="Widget del tiempo atmosférico">YoWindow.com</a></span>
+                                    <span style="float:right; color:#888888;"><a href="http://yr.no" style="color: #2fa900; text-decoration:none;">yr.no</a></span>
+                                </div>
+
+                                </a>
                             </li>
                             <li class="col-md-8">
                                 <div class="pull-left">
-                                    <span class="blog_header">WEBSITE TEMPLATE</span><br/>
-                                    <span>Posted by : <a class="link_orange" href="#"><span class="txt_orange">Mary</span></a></span>
+                                    <span class="blog_header">Medellin</span><br/>
                                 </div>
                                 <div class="pull-right">
-                                    <a class="btn btn-orange" href="#" role="button">18 February 2084</a>
+                                    <a class="btn btn-orange" href="#" role="button">Enviar</a>
                                 </div>
                                 <div class="clearfix"> </div>
-                                <p class="blog_text">
-                                        Morbi imperdiet ipsum sit amet dui pharetra, vulputate porta neque tristique. Quisque id turpis tristique, venenatis erat sit amet, venenatis turpis. Ut tellus ipsum, posuere bibendum [...]
+                                 <p class="blog_text">
+                                    In venenatis sodales purus a cursus. Ut consectetur, libero ac elementum tristique, enim ante aliquet mauris, scelerisque congue magna neque ac purus. Aliquam facilisis volutpat odio [...]
                                 </p>
                             </li>
                         </ul>	
@@ -366,20 +354,39 @@ http://www.templatemo.com/tm-395-urbanic
                     
                     <div class="col-sm-5 col-md-6 blog_post">
                         <ul class="list-inline">
-                            <li class="col-md-4"><a href="#">
-                                <img class="img-responsive" src="../images/blog-image-2.jpg" alt="gallery 3" /></a>
+                            <li class="col-md-4">
+                            <a href="#">
+                            <div style="width:220px; height:150px;">
+                                <object type="application/x-shockwave-flash" data="http://swf.yowindow.com/yowidget3.swf" width="220" height="150">
+                                    <param name="movie" value="http://swf.yowindow.com/yowidget3.swf"/>
+                                    <param name="allowfullscreen" value="true"/>
+                                    <param name="wmode" value="opaque"/>
+                                    <param name="bgcolor" value="#FFFFFF"/>
+                                    <param name="flashvars" 
+                                    value="location_id=3688689&amp;landscape=airport&amp;time_format=12&amp;unit_system=metric&amp;lang=es&amp;background=#FFFFFF&amp;mini_action=window&amp;copyright_bar=false"
+                                />
+                                    <a href="http://WeatherScreenSaver.com?client=widget&amp;link=copyright"
+                                    style="width:220px;height:150px;display: block;text-indent: -50000px;font-size: 0px;background:#DDF url(http://yowindow.com/img/logo.png) no-repeat scroll 50% 50%;"
+                                    >Widget del tiempo atmosférico</a>
+                                </object>
+                            </div>
+                            <div style="width: 220px; height: 15px; font-size: 14px; font-family: Arial,Helvetica,sans-serif;">
+                                <span style="float:left;"><a target="_top" href="http://WeatherScreenSaver.com?client=widget&amp;link=copyright" style="color: #2fa900; font-weight:bold; text-decoration:none;" title="Widget del tiempo atmosférico">YoWindow.com</a></span>
+                                <span style="float:right; color:#888888;"><a href="http://yr.no" style="color: #2fa900; text-decoration:none;">yr.no</a></span>
+                            </div>
+
+                            </a>
                             </li>
                             <li class="col-md-8">
-                                <div class="pull-left">
-                                    <span class="blog_header">WEB DEVELOPMENT</span><br/>
-                                    <span>Posted by : <a class="link_orange" href="#"><span class="txt_orange">Julia</span></a></span>
+                               <div class="pull-left">
+                                    <span class="blog_header">Bogota</span><br/>
                                 </div>
                                 <div class="pull-right">
-                                    <a class="btn btn-orange" href="#" role="button">14 February 2084</a>
+                                    <a class="btn btn-orange" href="#" role="button">Enviar</a>
                                 </div>
                                 <div class="clearfix"> </div>
                                 <p class="blog_text">
-                                        Fusce molestie tellus risus, id commodo turpis convallis id. Morbi mattis sapien sapien, vitae lacinia ante interdum sit amet. Praesent eget varius diam, ac tempor est. Mauris at scelerisque magna [...]
+                                    In venenatis sodales purus a cursus. Ut consectetur, libero ac elementum tristique, enim ante aliquet mauris, scelerisque congue magna neque ac purus. Aliquam facilisis volutpat odio [...]
                                 </p>
                             </li>
                         </ul>	
@@ -389,16 +396,32 @@ http://www.templatemo.com/tm-395-urbanic
                         <ul class="list-inline">
                             <li class="col-md-4">
                                 <a href="#">
-                                    <img class="img-responsive" src="../images/blog-image-1.jpg"  alt="gallery 4" />
+                                    <div style="width:220px; height:150px;">
+                                    <object type="application/x-shockwave-flash" data="http://swf.yowindow.com/yowidget3.swf" width="220" height="150">
+                                        <param name="movie" value="http://swf.yowindow.com/yowidget3.swf"/>
+                                        <param name="allowfullscreen" value="true"/>
+                                        <param name="wmode" value="opaque"/>
+                                        <param name="bgcolor" value="#FFFFFF"/>
+                                        <param name="flashvars" 
+                                        value="location_id=gn:3687238&amp;location_name=Cartagena%20de%20Indias&amp;landscape=seaside&amp;time_format=12&amp;unit_system=metric&amp;lang=es&amp;background=#FFFFFF&amp;mini_action=window&amp;copyright_bar=false"
+                                    />
+                                        <a href="http://WeatherScreenSaver.com?client=widget&amp;link=copyright"
+                                        style="width:220px;height:150px;display: block;text-indent: -50000px;font-size: 0px;background:#DDF url(http://yowindow.com/img/logo.png) no-repeat scroll 50% 50%;"
+                                        >Widget del tiempo atmosférico</a>
+                                    </object>
+                                </div>
+                                <div style="width: 220px; height: 15px; font-size: 14px; font-family: Arial,Helvetica,sans-serif;">
+                                    <span style="float:left;"><a target="_top" href="http://WeatherScreenSaver.com?client=widget&amp;link=copyright" style="color: #2fa900; font-weight:bold; text-decoration:none;" title="Widget del tiempo atmosférico">YoWindow.com</a></span>
+                                    <span style="float:right; color:#888888;"><a href="http://yr.no" style="color: #2fa900; text-decoration:none;">yr.no</a></span>
+                                </div>
                                 </a>
                             </li>
                             <li class="col-md-8">
                                 <div class="pull-left">
-                                    <span class="blog_header">NEW FLUID LAYOUT</span><br/>
-                                    <span>Posted by : <a class="link_orange" href="#"><span class="txt_orange">Linda</span></a></span>
+                                    <span class="blog_header">Cartagena</span><br/>
                                 </div>
                                 <div class="pull-right">
-                                    <a class="btn btn-orange" href="#" role="button">11 February 2084</a>
+                                    <a class="btn btn-orange" href="#" role="button">Enviar</a>
                                 </div>
                                 <div class="clearfix"> </div>
                                 <p class="blog_text">
@@ -477,39 +500,12 @@ http://www.templatemo.com/tm-395-urbanic
                     <div class="text-center">
 
                         <div class="footer_container">
-                            <ul class="list-inline">
-                                <li>
-                                    <a href="#">
-                                        <span class="social-icon-fb"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="social-icon-rss"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="social-icon-twitter"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="social-icon-linkedin"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="social-icon-dribbble"></span>
-                                    </a>
-                                </li>
-                            </ul>
                             <div class="height30"></div>
                             <a class="btn btn-lg btn-orange" href="#" role="button" id="btn-back-to-top">Back To Top</a>
                             <div class="height30"></div>
                         </div>
                         <div class="footer_bottom_content">
-                   			<span>Copyright © 2084 <a href="#">Your Company Name</a></span>
+                   			<span>Copyright © 2015 <a href="#">SMART LAMP</a></span>
                         </div>
                         
                     </div>
