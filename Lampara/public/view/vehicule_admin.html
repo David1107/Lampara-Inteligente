@@ -240,7 +240,7 @@ http://www.templatemo.com/tm-395-urbanic
                     <div class="clearfix"></div>
                     <div class="templatemo-gallery-category" style="font-size:16px; margin-top:80px;">
                         <div class="text-center">
-                            	<p class="team-inner-header">LET LISTEN THE WILD</p>						
+                            	<p class="team-inner-header">LET LISTEN THE MUSIC</p>						
                         </div>
                     </div>
                 </div> <!-- /.row -->
@@ -254,7 +254,17 @@ http://www.templatemo.com/tm-395-urbanic
                                 <div class="templatemo-project-box">
                                     <img src="../images/gallery-image-3.jpg" class="img-responsive" alt="gallery" />
                                 </div>
-                            <a class=" btn btn-lg btn-orange2" href="#" role="button">LISTEN</a>
+                            <input type="button" id="listen" class="btn btn-orange" value="LISTEN"></input>
+
+                                <script type="text/javascript">
+                                $(document).ready(function(){
+                                    $('#listen').click(function(){
+
+                                        $.get('http://172.30.153.238:2000/?s', function(data) {
+                                                });
+                                    });
+                                });
+                                </script>
                         </li>
                        
                     </ul><!-- /.gallery -->
@@ -305,11 +315,24 @@ http://www.templatemo.com/tm-395-urbanic
                                 </div>
                                 <div class="pull-right">
                                     <!--prueba JULIANA-->
-                                <form method="post" action="http://api.openweathermap.org/data/2.5/weather?q=Cali,col&appid=2de143494c0b295cca9337e1e96b00e">
-                                    <button type="submit" formmethod="post">Send(prueba)</button>
-                                </form>
-                                    <!--fin prueba-->
-                                    <a class="btn btn-orange" href="http://api.openweathermap.org/data/2.5/weather?q=Cali,col&appid=2de143494c0b295cca9337e1e96b00e0" role="button">Enviar</a>
+                                <input type="button" id="cali" class="btn btn-orange" value="ENVIAR"></input>
+
+                                <script type="text/javascript">
+                                $(document).ready(function(){
+                                    $('#cali').click(function(){
+                                       $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=Cali,col&appid=2de143494c0b295cca9337e1e96b00e0', {format: "json"}, function(data) { 
+                                                var tem = data.main.temp;
+                                                $.get('http://172.30.153.238:2000/?c='+tem, function(data) {
+                                                // Do something with the request
+                                                console.log(temp);
+                                                }, 'json');
+                                                
+                                            });
+                                    });
+                                });
+                                </script>
+                                    <!--fin prueba
+                                    <a class="btn btn-orange" href="http://api.openweathermap.org/data/2.5/weather?q=Cali,col&appid=2de143494c0b295cca9337e1e96b00e0" role="button">Enviar</a>-->
                                 </div>
                                 <div class="clearfix"> </div>
                                  <p class="blog_text">
@@ -350,7 +373,23 @@ http://www.templatemo.com/tm-395-urbanic
 
                                 </div>
                                 <div class="pull-right">
-                                    <a class="btn btn-orange" href="http://api.openweathermap.org/data/2.5/weather?q=Medellin,col&appid=2de143494c0b295cca9337e1e96b00e0" role="button">Enviar</a>
+                                <input type="button" id="med" class="btn btn-orange" value="ENVIAR"></input>
+
+                                <script type="text/javascript">
+                                $(document).ready(function(){
+                                    $('#med').click(function(){
+                                       $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=Medellin,col&appid=2de143494c0b295cca9337e1e96b00e0', {format: "json"}, function(data) { 
+                                                var tem = data.main.temp;
+                                                $.get('http://172.30.153.238:2000/?c='+tem, function(data) {
+                                                // Do something with the request
+                                                console.log(temp);
+                                                }, 'json');
+                                                
+                                            });
+                                    });
+                                });
+                                </script>
+                                    
                                 </div>
                                 <div class="clearfix"> </div>
                                  <p class="blog_text">
@@ -392,7 +431,23 @@ http://www.templatemo.com/tm-395-urbanic
                                     <span class="blog_header">Bogotá</span><br/>
                                 </div>
                                 <div class="pull-right">
-                                    <a class="btn btn-orange" href="http://api.openweathermap.org/data/2.5/weather?q=Bogota,col&appid=2de143494c0b295cca9337e1e96b00e0" role="button">Enviar</a>
+                                <input type="button" id="bog" class="btn btn-orange" value="ENVIAR"></input>
+
+                                <script type="text/javascript">
+                                $(document).ready(function(){
+                                    $('#bog').click(function(){
+                                       $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=Bogota,col&appid=2de143494c0b295cca9337e1e96b00e0', {format: "json"}, function(data) { 
+                                                var tem = data.main.temp;
+                                                $.get('http://172.30.153.238:2000/?c='+tem, function(data) {
+                                                // Do something with the request
+                                                console.log(temp);
+                                                }, 'json');
+                                                
+                                            });
+                                    });
+                                });
+                                </script>
+                                    
                                 </div>
                                 <div class="clearfix"> </div>
                                 <p class="blog_text">
@@ -431,7 +486,22 @@ http://www.templatemo.com/tm-395-urbanic
                                     <span class="blog_header">Cartagena</span><br/>
                                 </div>
                                 <div class="pull-right">
-                                    <a class="btn btn-orange" href="http://api.openweathermap.org/data/2.5/weather?q=Cartagena,col&appid=2de143494c0b295cca9337e1e96b00e0" role="button">Enviar</a>
+                                    <input type="button" id="cart" class="btn btn-orange" value="ENVIAR"></input>
+
+                                <script type="text/javascript">
+                                $(document).ready(function(){
+                                    $('#cart').click(function(){
+                                       $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=Cartagena,col&appid=2de143494c0b295cca9337e1e96b00e0', {format: "json"}, function(data) { 
+                                                var tem = data.main.temp;
+                                                $.get('http://172.30.153.238:2000/?c='+tem, function(data) {
+                                                // Do something with the request
+                                                console.log(temp);
+                                                }, 'json');
+                                                
+                                            });
+                                    });
+                                });
+                                </script>
                                 </div>
                                 <div class="clearfix"> </div>
                                 <p class="blog_text">
